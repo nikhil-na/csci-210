@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../header/navbar";
+import Footer from "../header/footer";
 
 function Login(){
 
     return (
         <div>
+            <Navbar />
             <section class="mb-5">
             <div class="px-4 py-5 px-md-5 text-center text-lg-start">
                 <div class="container-fluid mt-5">
@@ -43,6 +46,7 @@ function Login(){
                 </div>
             </div>
             </section>
+        <Footer />
         </div>
     )
 }
