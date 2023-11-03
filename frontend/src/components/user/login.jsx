@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../header/navbar";
 import Footer from "../header/footer";
 
 function Login(){
+    const [values, setValues] = useState({
+        email: '',
+        password: ''
+    });
+
+    const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost:8000/login', values)
+        .then((res) => {
+            if(res.data.Status === "Success"){
+                navigate('/dashboard');
+            } else{
+                console.log("Error");
+            }
+        })
+        .catch(err => console.log(err))
+    }
 
     return (
         <div>
@@ -21,15 +44,19 @@ function Login(){
                         <div class="col-lg-6 mb-5 mb-lg-0">
                             <div class="card">
                                 <div class="card-body py-5 px-md-5">
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="email">Email address</label>
-                                        <input type="email" placeholder="Enter a valid email address" id="email" class="form-control" />
+                                        <input type="email" placeholder="Enter a valid email address" id="email" class="form-control" onChange={(e) => {
+                                            setValues({...values, email: e.target.value})
+                                        }} />
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" placeholder="Enter a valid password" id="password" class="form-control"/>
+                                        <input type="password" placeholder="Enter a valid password" id="password" class="form-control" onChange={(e) => {
+                                            setValues({...values, password: e.target.value})
+                                    }}/>
                                     </div>
 
                                     <button type="submit" class="btn btn-success btn-block mb-4 w-100">
@@ -50,4 +77,5 @@ function Login(){
         </div>
     )
 }
+
 export default Login;
