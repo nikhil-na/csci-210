@@ -1,5 +1,5 @@
-Basic expense tracker app using React-JS, Node, MongoDB
+Basic expense tracker app using React-JS, Node, MongoDB.
 
-# Finalizing dadhboard page
+# CSCI-210
 
-### CSCI-210
+#### Finalizing dadhboard page
