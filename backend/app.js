@@ -16,10 +16,12 @@ app.use(cors({
 app.use(cookieParser());
 
 const dotenv = require('dotenv');
-dotenv.config({ path: 'backend/config/config.env' });
+dotenv.config({ path: 'config/config.env' });
 const { dot } = require('node:test/reporters');
 
 //db connection
+console.log(process.env.DBURI)
+console.log(process.env.JWT_SECRET)
 mongoose.connect(process.env.DBURI)
     .then((result) => {
         app.listen(8000);
