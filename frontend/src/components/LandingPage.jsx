@@ -20,7 +20,7 @@ function LandingPage(){
             <Footer />
             </header>
         </div>
-
+        
 )
 }
 
