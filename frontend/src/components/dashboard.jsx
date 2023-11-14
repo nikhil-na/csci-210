@@ -60,9 +60,9 @@ function Dashboard(){
 
     return (
     
-        <div style={setBackground}>
+        <div>
             <Navbar />
-            <div className="container">
+            <div className="container mb-5">
                 {
                     auth && 
                     <>
