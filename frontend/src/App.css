@@ -1,5 +1,5 @@
 /* google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 .App {
   text-align: center;
@@ -16,14 +16,14 @@
   }
 }
 
-.header-container h1{
-    width: 100%;
-    padding-top: 10rem;
-    padding-left: 10rem;
-    font-size: 5rem;
-    font-family: 'Playfair Disney';
-    text-transform: uppercase;
-    color: #ffffff;
+.header-container h1 {
+  width: 100%;
+  padding-top: 10rem;
+  padding-left: 10rem;
+  font-size: 5rem;
+  font-family: "Playfair Disney";
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .App-header {
@@ -41,21 +41,20 @@
   color: #61dafb;
 }
 
-h3{
-  font-family: 'Quicksand', sans-serif;
+h3 {
+  font-family: "Quicksand", sans-serif;
   text-transform: uppercase;
 }
 
-footer{
+footer {
   text-align: center;
   margin-top: 120px;
   color: #af0e0e86;
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #444;
 }
-
 
 @keyframes App-logo-spin {
   from {

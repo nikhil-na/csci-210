@@ -1,4 +1,4 @@
-import { Button, Card, ProgressBar, Stack } from "react-bootstrap"
+import { Button, Card, ProgressBar, Stack } from "react-bootstrap";
 
 export default function BudgetCard({
   name,
@@ -9,11 +9,11 @@ export default function BudgetCard({
   onAddExpenseClick,
   onViewExpensesClick,
 }) {
-  const classNames = []
+  const classNames = [];
   if (amount > max) {
-    classNames.push("bg-danger", "bg-opacity-10")
+    classNames.push("bg-danger", "bg-opacity-10");
   } else if (gray) {
-    classNames.push("bg-light")
+    classNames.push("bg-light");
   }
 
   return (
@@ -55,18 +55,18 @@ export default function BudgetCard({
         )}
       </Card.Body>
     </Card>
-  )
+  );
 }
 
 function getProgressBarVariant(amount, max) {
-  const ratio = amount / max
-  if (ratio < 0.5) return "primary"
-  if (ratio < 0.75) return "warning"
-  return "danger"
+  const ratio = amount / max;
+  if (ratio < 0.5) return "primary";
+  if (ratio < 0.75) return "warning";
+  return "danger";
 }
 
 const currencyFormatter = new Intl.NumberFormat(undefined, {
   currency: "usd",
   style: "currency",
   minimumFractionDigits: 0,
-})
+});

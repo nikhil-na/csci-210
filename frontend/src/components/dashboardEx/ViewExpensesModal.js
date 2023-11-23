@@ -1,22 +1,24 @@
-import { Modal, Button, Stack } from "react-bootstrap"
-import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "../../context/BudgetsContext"
+import { Modal, Button, Stack } from "react-bootstrap";
+import {
+  UNCATEGORIZED_BUDGET_ID,
+  useBudgets,
+} from "../../context/BudgetsContext";
 
 export default function ViewExpensesModal({ budgetId, handleClose }) {
-
   const currencyFormatter = new Intl.NumberFormat(undefined, {
     currency: "usd",
     style: "currency",
     minimumFractionDigits: 0,
-  })
+  });
 
   const { getBudgetExpenses, budgets, deleteBudget, deleteExpense } =
-    useBudgets()
+    useBudgets();
 
-  const expenses = getBudgetExpenses(budgetId)
+  const expenses = getBudgetExpenses(budgetId);
   const budget =
     UNCATEGORIZED_BUDGET_ID === budgetId
       ? { name: "Uncategorized", id: UNCATEGORIZED_BUDGET_ID }
-      : budgets.find(b => b.id === budgetId)
+      : budgets.find((b) => b.id === budgetId);
 
   return (
     <Modal show={budgetId != null} onHide={handleClose}>
@@ -27,8 +29,8 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
             {budgetId !== UNCATEGORIZED_BUDGET_ID && (
               <Button
                 onClick={() => {
-                  deleteBudget(budget)
-                  handleClose()
+                  deleteBudget(budget);
+                  handleClose();
                 }}
                 variant="outline-danger"
               >
@@ -40,7 +42,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
       </Modal.Header>
       <Modal.Body>
         <Stack direction="vertical" gap="3">
-          {expenses.map(expense => (
+          {expenses.map((expense) => (
             <Stack direction="horizontal" gap="2" key={expense.id}>
               <div className="me-auto fs-4">{expense.description}</div>
               <div className="fs-5">
@@ -58,5 +60,5 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
         </Stack>
       </Modal.Body>
     </Modal>
-  )
+  );
 }
