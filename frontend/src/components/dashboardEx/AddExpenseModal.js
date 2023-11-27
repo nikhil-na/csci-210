@@ -29,15 +29,15 @@ export default function AddExpenseModal({
     <Modal show={show} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>New Expense</Modal.Title>
+          <Modal.Title style={{ color: "black" }}>New Expense</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group className="mb-3" controlId="description">
-            <Form.Label>Description</Form.Label>
+            <Form.Label style={{ color: "black" }}>Description</Form.Label>
             <Form.Control ref={descriptionRef} type="text" required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="amount">
-            <Form.Label>Amount</Form.Label>
+            <Form.Label style={{ color: "black" }}>Amount</Form.Label>
             <Form.Control
               ref={amountRef}
               type="number"

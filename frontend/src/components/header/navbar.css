@@ -1,0 +1,26 @@
+/* Navbar.css */
+
+.navbar {
+  background: linear-gradient(to bottom, #4caf50, white);
+  padding: 10px 0; /* Decreased padding */
+}
+
+.navbar-brand img {
+  width: 50px; /* Decreased logo size */
+  height: auto;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Decreased margin between items */
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px; /* Decreased font size */
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #4caf50;
+}

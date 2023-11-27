@@ -1,44 +1,36 @@
+// LandingPage.js
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./header/navbar";
 import Footer from "./header/footer";
 
+import "./LandingPage.css"; // Import the external CSS file
+
 function LandingPage() {
   return (
     <div>
       <Navbar />
-      <header style={styleHeader}>
-        <div className="vh-100 d-flex">
-          <div className="header-container">
-            <h1 className="text-dark">
-              Your Personal<div className="text-success">Expense Tracker</div>
-            </h1>
-          </div>
-          <div className="container d-flex justify-content-center align-items-center">
-            <Link
-              to="/login"
-              className="btn btn-success px-5 mt-5 mx-3 text-decoration-none"
-            >
-              <strong>Login</strong>
-            </Link>
-            <Link
-              to="/signup"
-              className="btn btn-secondary px-5 mt-5 text-decoration-none"
-            >
-              <strong>Register</strong>
-            </Link>
-          </div>
+      <header>
+        <div className="header-container">
+          <h1>
+            Control Your Finances with{" "}
+            <span className="text-success">Expense Tracker</span>
+          </h1>
+          <p>Track your spending and set financial goals.</p>
         </div>
-        <Footer />
+        <div className="container">
+          <Link to="/login" className="btn btn-success text-decoration-none">
+            <strong>Get Started - Login</strong>
+          </Link>
+          <Link to="/signup" className="btn btn-secondary text-decoration-none">
+            <strong>Join Now - Register</strong>
+          </Link>
+        </div>
       </header>
+      <Footer />
     </div>
   );
 }
-
-const styleHeader = {
-  width: "100%",
-  height: "auto",
-  background: "linear-gradient(45deg, #808080, #ffffff)",
-};
 
 export default LandingPage;

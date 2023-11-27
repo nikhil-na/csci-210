@@ -1,0 +1,77 @@
+/* LandingPage.css */
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #293241;
+  color: #ffffff;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.header-container {
+  text-align: center;
+  padding: 120px 0;
+}
+
+.header-container h1 {
+  font-size: 4em;
+  font-weight: bold;
+  color: #02c39a; /* Vibrant green text color */
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.header-container p {
+  font-size: 1.5em;
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.container {
+  text-align: center;
+}
+
+.btn-success,
+.btn-secondary {
+  font-size: 1.5em;
+  margin: 10px; /* Reduced margin */
+  padding: 15px 30px;
+}
+
+.btn-success {
+  background-color: #02c39a;
+  border-color: #02c39a;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #ff9f43;
+  border-color: #ff9f43;
+  color: #ffffff;
+}
+
+/* Navbar.css (adjustments) */
+.navbar {
+  background: #02c39a;
+  padding: 10px 0;
+}
+
+.navbar-brand img {
+  width: 60px;
+  height: auto;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #0d0303;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: rgb(142, 67, 255);
+}

@@ -12,22 +12,39 @@ function Signup() {
     password: "",
   });
 
+  const [error, setError] = useState(""); // State variable for error handling
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:8000/signup", values)
-      .then((res) => {
-        if (res.data.Status === "Success") {
-          navigate("/dashboard");
+    try {
+      const res = await axios.post("http://localhost:8000/signup", values);
+
+      if (res.data.Status === "Success") {
+        setError(""); // Clear any previous errors
+        navigate("/dashboard");
+      } else {
+        // Check for specific errors
+        if (res.data.errors) {
+          setError(
+            res.data.errors.email ||
+              res.data.errors.password ||
+              "Signup failed. Please check your information."
+          );
         } else {
-          console.log("Error");
+          setError("Signup failed. Please check your information.");
         }
-      })
-      .catch((err) => console.log(err));
+      }
+    } catch (err) {
+      const resError = err.response.data.errors;
+      if (resError.password.includes("Minimum password")) {
+        setError("Minimum password length is 6");
+      } else {
+        setError("Invalid email");
+      }
+    }
   };
 
   return (
@@ -98,6 +115,11 @@ function Signup() {
                       >
                         Sign up
                       </button>
+                      {error && (
+                        <div class="alert alert-danger" role="alert">
+                          {error}
+                        </div>
+                      )}
                       <p>If you have an account, </p>
                       <Link
                         to="/login"
