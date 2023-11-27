@@ -68,7 +68,7 @@ function Dashboard() {
           <>
             <Container className="my-4">
               <Stack direction="horizontal" gap="2" className="mb-4">
-                <h3 className="me-auto">
+                <h3 className="me-auto" style={{ color: "white" }}>
                   Welcome to your Dashboard, {name} !!
                 </h3>
                 <Button variant="outline-primary" onClick={handleLogout}>
@@ -76,7 +76,9 @@ function Dashboard() {
                 </Button>
               </Stack>
               <Stack direction="horizontal" gap="2" className="mb-4">
-                <h1 className="me-auto">Budgets</h1>
+                <h1 className="me-auto" style={{ color: "white" }}>
+                  Budgets
+                </h1>
                 <Button
                   variant="primary"
                   onClick={() => setShowAddBudgetModal(true)}
@@ -138,7 +140,6 @@ function Dashboard() {
           </>
         )}
       </div>
-      <Footer />
     </div>
   );
 }
